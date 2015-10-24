@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度一下，你就知道</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		html{background-color: white;}
+		body{width: 1280px;height: 600px;}
+		#nav{float: right;margin-top: 20px;}
+		ul{list-style: none;}
+		ul li{float: left;margin-left: 20px;}
+		ul li a{text-decoration: underline;color: #333;font-size:13px;font-weight: bold;}
+		ul li a:hover{color: #00C;}
+		#search{clear: right;text-align: center;}
+		#search button{background-color: #3385FF;color: white;width:100px;height:36px;font-size:20px;}
+		#footer ul li a{font-size: 10px;color: #00C;}
+		#footer{
+			height: 100px;
+			position: absolute;
+			bottom: 44px;
+			text-align: center;
+			width: 100%;
+			margin: 0px auto;
+		}
+		#footer ul li{float: none;display: inline;}
+		#footer ul li a{font-weight: normal;}
+		#cp{font-size: 10px;margin-top: 10px;color: #666;}
+		#moreproduct button{background-color: #3385FF;width: 66px;height: 24px;color: white;margin-top: -20px;}
+		#sidebar{width: 66px;position: absolute;top: 42px;text-align: center;visibility: hidden;background-color: rgb(249,249,249);color: #666;}
+		#sidebar a{text-decoration: none;}
+		#sidebar a:hover{text-decoration: underline;color: #666;}
+		#sidebar span{
+			width: 36px;
+			height: 36px;
+			display: block;
+			margin: 10px auto 5px;
+			background: transparent url("https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/bdbri_icons_2e35e84b.png") no-repeat scroll 0% 0%;
+			cursor: pointer;
+		}
+		#sidebar #sb1{background-position: 0 0;}
+		#sidebar #sb2{background-position: -36px 0;}
+		#sidebar #sb3{background-position: -72px 0;width: 40px;}
+		#sidebar #sb4{background-position: -112px 0;}
+		#sidebar #sb5{background-position: -148px 0;}
+		#sidebar #sb6{background-position: -184px 0;}
+		#sidebar #sb7{background-position: -220px 0;}
+		#sidebar #allproduct{font-size: 12px;text-align: center;line-height: 36px;}
+
+		#setup{margin-right: -20px;}
+		#setup ul{visibility: hidden;margin-left: -25px;}
+		#setup ul li{display: block;float: none;margin-top: 2px;}
+	</style>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+			<li><a href="http://news.baidu.com">新闻</a></li>
+			<li><a href="http://www.hao123.com">hao123</a></li>
+			<li><a href="http://map.baidu.com">地图</a></li>
+			<li><a href="http://v.baidu.com">视频</a></li>
+			<li><a href="http://tieba.baidu.com#">贴吧</a></li>
+			<li><a href="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F">登录</a></li>
+			<li id="setup"><a href="http://www.baidu.com/gaoji/preferences.html">设置</a>
+				<ul>
+					<li><a href="javascript:;">搜索设置</a></li>
+					<li><a href="http://www.baidu.com/gaoji/advanced.html">高级搜索</a></li>
+					<li><a href="javascript:;">搜索历史</a>
+					</ul>
+				</li>
+				<li id="moreproduct"><button>更多产品</button>&nbsp;&nbsp;
+					<ul id="sidebar">
+						<a href="http://www.nuomi.com">
+							<span id="sb1"></span>
+							糯米
+						</a>
+						<a href="http://zhidao.baidu.com">
+							<span id="sb2"></span>
+							知道
+						</a>
+						<a href="http://music.baidu.com">
+							<span id="sb3"></span>
+							音乐
+						</a>
+						<a href="http://image.baidu.com">
+							<span id="sb4"></span>
+							图片
+						</a>
+						<a href="http://wenku.baidu.com">
+							<span id="sb5"></span>
+							文库
+						</a>
+						<a href="http://top.baidu.com">
+							<span id="sb6"></span>
+							风云榜
+						</a>
+						<a href="http://e.baidu.com/?refer=888">
+							<span id="sb7"></span>
+							百度推广
+						</a>
+						<a href="http://www.baidu.com/more/" id="allproduct">
+							全部产品>>
+						</a>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="search">
+			<img src="http://www.baidu.com/img/bd_logo1.png" style="width:270px;height:129px;">
+			<div id="search_box">
+				<input style="width:540px;height:36px;"></input>
+				<button>百度一下</button>
+			</div>
+		</div>
+		<div id="footer">
+			<ul>
+				<li><a href="http://www.baidu.com/cache/sethelp/help.html">把百度设为首页</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+				<li><a href="http://home.baidu.com">关于百度</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+				<li><a href="http://ir.baidu.com">About&nbsp;&nbsp;Baidu</a></li>
+			</ul>
+			<p id="cp">©2015 Baidu <a href="http://www.baidu.com/duty/">使用百度前必读</a>&nbsp;&nbsp;<a href="http://jianyi.baidu.com/">意见反馈</a> 备ICP证000000号 </p>
+		</div>
+		<script type="text/javascript" src="/Users/ddgreat/Documents/Web/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#moreproduct").mouseover(function(){
+					$("#sidebar").css("visibility","visible");
+				}).mouseout(function(){
+					$("#sidebar").css("visibility","hidden");
+				})
+			})
+
+			$(function(){
+				$("#setup").mouseover(function(){
+			//$("#setup ul").css("visibility","visible");
+			$("#setup ul").css("visibility","visible");
+		}).mouseout(function(){
+			//$("#setup ul").css("visibility","hidden");
+			$("#setup ul").css("visibility","hidden");
+		})
+	})
+		</script>
+	</body>
+</html>
